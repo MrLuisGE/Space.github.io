@@ -184,7 +184,8 @@ body {
   right: 0;
   bottom: 0;
   margin-left: -1500px;
-  z-index: 2; 
+  z-index: 2;
+  transform-style: preserve-3d; 
 }
 
 .parallax__layer {
