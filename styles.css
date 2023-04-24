@@ -215,27 +215,34 @@ body {
 
 .parallax__layer__1 {
   transform: translateZ(-100px) scale(1.5);
+  z-index: 6;
 }
 
 .parallax__layer__2 {
   transform: translateZ(-200px) scale(2);
+  z-index: 5; 
 }
 
 .parallax__layer__3 {
   transform: translateZ(-300px) scale(2.5);
+  z-index: 4; 
 }
 
 .parallax__layer__4 {
   transform: translateZ(-400px) scale(3);
+  z-index: 3;
 }
 
 .parallax__layer__5 {
   transform: translateZ(-500px) scale(3.5);
+  z-index: 2; 
 }
 
 .parallax__layer__6 {
   transform: translateZ(-600px) scale(4);
+  z-index: 1; 
 }
+
 
 @keyframes falling-star {
   0% {
