@@ -53,7 +53,7 @@ body {
 }
 
 .contact-us-btn:hover {
-  transform: translateX(-50%) translateY(-5px); 
+  transform: translateX(-50%) translateY(-5px);
 }
 
 .contact-us-btn:active {
@@ -67,7 +67,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1; 
 }
 
 .star {
@@ -84,7 +84,7 @@ body {
 .moon {
   position: absolute;
   top: 85px; 
-  right: 35px; 
+  right: 35px;
   width: 200px; 
   height: 200px;
   background-color: #E6E6E6;
@@ -164,13 +164,13 @@ body {
 
 .stripe-2 {
   top: 45%;
-  left: -50%;
+  left: -50%; 
   transform: rotate(-20deg);
 }
 
 .stripe-3 {
   top: 75%;
-  left: -50%; 
+  left: -50%;
   transform: rotate(-20deg);
 }
 
@@ -184,7 +184,7 @@ body {
   right: 0;
   bottom: 0;
   margin-left: -1500px;
-  z-index: 2;
+  z-index: 2; 
 }
 
 .parallax__layer {
