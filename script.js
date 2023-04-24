@@ -1,5 +1,3 @@
-// script.js
-
 const starsContainer = document.querySelector('.stars-container');
 const numberOfStars = 70;
 
