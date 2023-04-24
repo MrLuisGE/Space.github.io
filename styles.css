@@ -1,0 +1,343 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html,
+body {
+  background-color: #000000;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba( 39, 33, 79, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 11px );
+  -webkit-backdrop-filter: blur( 11px );
+}
+
+.menu-image {
+  width: 250px;
+  height: auto;
+}
+
+.contact-us-btn {
+  position: absolute;
+  bottom: 40px; /* Increased the margin from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: rgba(83, 0, 49, 0.3);
+  border: 4px solid rgba(255, 87, 60, 0.5);
+  border-radius: 5px;
+  color: rgba(255, 87, 60, 0.5);
+  font-size: 25px;
+  cursor: pointer;
+  z-index: 5;
+  backdrop-filter: blur(5px);
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.contact-us-btn:hover {
+  transform: translateX(-50%) translateY(-5px); /* Move the button up slightly */
+}
+
+.contact-us-btn:active {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) translateY(0); /* Reset the button position */
+}
+
+.stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  opacity: 0;
+  background-color: #ffffff;
+  border-radius: 50%;
+  filter: blur(0.5px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.moon {
+  position: absolute;
+  top: 85px; /* Position below the menu */
+  right: 35px; /* Position at the right side of the screen */
+  width: 200px; /* Increase the size of the moon */
+  height: 200px;
+  background-color: #E6E6E6;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 70px rgba(255, 230, 128, 0.3);
+}
+
+/* Update moon craters */
+.moon .crater {
+  position: absolute;
+  background: radial-gradient(circle at 50% 50%, #C8C8C8, #B8B8B8 70%, #A8A8A8 100%);
+  border-radius: 50%;
+}
+
+.moon-crater {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 60%, transparent 70%);
+}
+
+.moon-crater.big {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 60%, transparent 70%);
+}
+
+.moon-crater.bigger {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 60%, transparent 70%);
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.planet-1 {
+  top: 10vh;
+  left: 5vw;
+  width: 120px;
+  height: 120px;
+  background-color: #FF6A70;
+  box-shadow: 0 0 20px rgba(255, 106, 112, 0.5);
+}
+
+.planet-2 {
+  top: 30vh;
+  left: 20vw;
+  width: 80px;
+  height: 80px;
+  background-color: #61C1D7;
+  box-shadow: 0 0 20px rgba(97, 193, 215, 0.5);
+}
+
+.stripe {
+  position: absolute;
+  width: 200%; /* Increased width */
+  background-color: rgba(0, 0, 0, 0.15);
+  transform-origin: 50% 50%;
+}
+
+.stripe-red {
+  height: 18px;
+}
+
+.stripe-blue {
+  height: 12px; /* Thinner stripes for the blue planet */
+}
+
+.stripe-1 {
+  top: 15%;
+  left: -50%; /* Adjust the left position */
+  transform: rotate(-20deg);
+}
+
+.stripe-2 {
+  top: 45%;
+  left: -50%; /* Adjust the left position */
+  transform: rotate(-20deg);
+}
+
+.stripe-3 {
+  top: 75%;
+  left: -50%; /* Adjust the left position */
+  transform: rotate(-20deg);
+}
+
+.parallax {
+  perspective: 200px;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: auto;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  margin-left: -1500px;
+  z-index: 2;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__layer img {
+  display: block;
+  position: absolute;
+  bottom: 0;
+}
+
+.parallax__cover {
+  background: #2D112B;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 2000px;
+  z-index: 8;
+}
+
+.parallax__layer__1 {
+  transform: translateZ(-100px) scale(1.5);
+}
+
+.parallax__layer__2 {
+  transform: translateZ(-200px) scale(2);
+}
+
+.parallax__layer__3 {
+  transform: translateZ(-300px) scale(2.5);
+}
+
+.parallax__layer__4 {
+  transform: translateZ(-400px) scale(3);
+}
+
+.parallax__layer__5 {
+  transform: translateZ(-500px) scale(3.5);
+}
+
+.parallax__layer__6 {
+  transform: translateZ(-600px) scale(4);
+}
+
+@keyframes falling-star {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100%) rotate(45deg);
+  }
+}
+
+.falling-star {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #ffffff;
+  filter: blur(1px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  z-index: 4;
+}
+
+.falling-star:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.falling-star:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.falling-star:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.falling-star:nth-child(5) {
+  animation-delay: 4s;
+}
+
+@media (max-width: 768px) {
+  .moon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .planet-1 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .planet-2 {
+    width: 60px;
+    height: 60px;
+  }
+  .contact-us-btn{
+    font-size: medium;
+  }
+  .parallax{
+    perspective: 150px;
+    bottom: -100px;
+  }
+  .stripe-red {
+    height: 9px;
+  }
+  
+  .stripe-blue {
+    height: 6px; /* Thinner stripes for the blue planet */
+  }
+  .moon .crater {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .moon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .planet-1 {
+    width: 60px;
+    height: 60px;
+  }
+
+  .planet-2 {
+    width: 40px;
+    height: 40px;
+  }
+  .parallax{
+    perspective: 150px;
+    bottom: -100px;
+  }
+  .stripe-red {
+    height: 9px;
+  }
+  
+  .stripe-blue {
+    height: 6px; /* Thinner stripes for the blue planet */
+  }
+  .moon .crater {
+    transform: scale(0.6);
+  }
+}
