@@ -44,6 +44,20 @@ function animateStar(star) {
   }, duration);
 }
 
+const parallaxLayers = document.querySelectorAll('.parallax__layer');
+
+function updateParallax() {
+  const scrollTop = window.pageYOffset;
+
+  parallaxLayers.forEach((layer) => {
+    const depth = layer.getAttribute('data-depth');
+    const movement = -(scrollTop * depth);
+    layer.style.transform = `translateY(${movement}px)`;
+  });
+}
+
+window.addEventListener('scroll', updateParallax);
+
 document.querySelectorAll('.star').forEach(animateStar);
 
 const sky = document.querySelector('.stars-container');
