@@ -14,7 +14,7 @@ function getRandomPosition() {
 }
 
 function getRandomColor() {
-  const colors = ['#ffffff', '#ffff99']; // white and subtle yellow
+  const colors = ['#ffffff', '#ffff99']; 
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
