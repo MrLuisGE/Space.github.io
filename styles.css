@@ -434,8 +434,25 @@ body {
   flex-direction: column;
 }
 .card{
-  width: 90%;
+  width: 95%;
   height: auto;
+  background: rgb(88, 88, 88);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
+}
+.card1{
+  margin-top: 20vh;
+  width: 95%;
+  height: auto;
+  background: rgb(88, 88, 88);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
 }
 .card p{
   font-size: 1.2em;
@@ -443,11 +460,6 @@ body {
 .card h2{
   font-size: 2em;
   text-align: center;
-}
-.card1{
-  width: 90%;
-  height: auto;
-  margin-top: 20vh;
 }
 .card1 p{
   font-size: 1.2em;
