@@ -5,13 +5,24 @@
 
 html,
 body {
-  background-color: #000000;
-  overflow: hidden;
-  height: 100vh;
-  margin: 0;
-  position: relative;
-  z-index: 1;
+	background: #020202;
+	margin: 0;
+	padding: 0;
 }
+
+body {
+	min-height: 200vh;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .menu-bar {
   position: absolute;
@@ -34,9 +45,55 @@ body {
   height: auto;
 }
 
+.card {
+  background: rgba(134, 134, 134, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
+  width: 28rem;
+  height: 50vh;
+  margin: 15px;
+  border-radius: 15px;
+  transition: transform 250ms, opacity 400ms;
+}
+.card h2{
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+	font-size: 1.8rem;
+	opacity: 1;
+  color: rgb(0, 0, 0);
+}
+.card p{
+	display: flex;
+	justify-content: center;
+	margin: 25px 25px;
+	opacity: 1;
+	font-weight: 600;
+	text-align: center;
+  color: rgb(0, 0, 0);
+}
+.card:hover{
+  background: rgba(134, 134, 134, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
+	font-weight: 1000;
+	transition: 0.5s;
+	transform: scale(1.1) translateY(-10px);
+	opacity: 1;
+}
+
+.button-sec{
+  margin-bottom: 80vh;
+}
+
 .contact-us-btn {
   position: absolute;
-  bottom: 40px; 
   left: 50%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -175,7 +232,7 @@ body {
 }
 
 .parallax {
-  z-index: 4;
+  z-index: 3;
 	height: 100vh;
 	overflow: hidden;
 	position: relative;
@@ -217,7 +274,7 @@ body {
   background-color: #ffffff;
   filter: blur(1px);
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  z-index: 4;
+  z-index: -1;
 }
 
 .falling-star:nth-child(2) {
@@ -235,6 +292,15 @@ body {
 .falling-star:nth-child(5) {
   animation-delay: 4s;
 }
+
+.top-half {
+  background-color: #000000; /* Black */
+}
+
+.bottom-half {
+  background-color: #2d112b; /* Red */
+}
+
 
 @supports (animation-timeline: works) {
 	.warning {
@@ -290,6 +356,15 @@ body {
 
 
 @media (max-width: 768px) {
+  body {
+    min-height: 300vh;
+  }
+  .bottom-half {
+    min-height: 300vh;
+    background-color: #2d112b;
+    z-index: 3;
+  }
+
   .moon {
     width: 150px;
     height: 150px;
@@ -321,6 +396,28 @@ body {
   .moon .crater {
     transform: scale(0.6);
   }
+  .container{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card{
+  height: 100%;
+  width: 90%;
+  height: auto;
+  margin: 10px;
+}
+.card p{
+  font-size: 1em;
+}
+.card h2{
+  font-size: 1.6em;
+}
+.card-img{
+  width: 4.5rem;
+  margin-top: 10%;
+}
 }
 
 @media (max-width: 480px) {
