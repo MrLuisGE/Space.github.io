@@ -175,74 +175,26 @@ body {
 }
 
 .parallax {
-  perspective: 200px;
-  height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  top: auto;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-  margin-left: -1500px;
-  z-index: 2;
-  transform-style: preserve-3d; 
+  z-index: 4;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
 }
 
 .parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 0;
+	bottom: 0;
+	margin-left: -1500px;
 }
 
 .parallax__layer img {
-  display: block;
-  position: absolute;
-  bottom: 0;
+	display: block;
+	position: absolute;
+	bottom: 0;
 }
-
-.parallax__cover {
-  background: #2D112B;
-  display: block;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 2000px;
-  z-index: 8;
-}
-
-.parallax__layer__1 {
-  transform: translateZ(-100px) scale(1.5);
-  z-index: 1;
-}
-
-.parallax__layer__2 {
-  transform: translateZ(-200px) scale(2);
-  z-index: 2; 
-}
-
-.parallax__layer__3 {
-  transform: translateZ(-300px) scale(2.5);
-  z-index: 3; 
-}
-
-.parallax__layer__4 {
-  transform: translateZ(-400px) scale(3);
-  z-index: 4;
-}
-
-.parallax__layer__5 {
-  transform: translateZ(-500px) scale(3.5);
-  z-index: 5; 
-}
-
-.parallax__layer__6 {
-  transform: translateZ(-600px) scale(4);
-  z-index: 6; 
-}
-
 
 @keyframes falling-star {
   0% {
@@ -283,6 +235,59 @@ body {
 .falling-star:nth-child(5) {
   animation-delay: 4s;
 }
+
+@supports (animation-timeline: works) {
+	.warning {
+		display: none;
+	}
+
+	@scroll-timeline scroll-for-100vh {
+		time-range: 1s;
+		start: 0;
+		end: 100vh;
+		scroll-offsets: 0, 100vh;
+	}
+
+	@keyframes parallax {
+		to {
+			transform: translateY(var(--offset));
+		}
+	}
+
+	.parallax__layer {
+		animation: 1s parallax linear;
+		animation-timeline: scroll-for-100vh;
+	}
+
+	.parallax__layer__0 {
+		--offset: 100vh;
+	}
+
+	.parallax__layer__1 {
+		--offset: 83vh;
+	}
+
+	.parallax__layer__2 {
+		--offset: 67vh;
+	}
+
+	.parallax__layer__3 {
+		--offset: 50vh;
+	}
+
+	.parallax__layer__4 {
+		--offset: 34vh;
+	}
+
+	.parallax__layer__5 {
+		--offset: 17vh;
+	}
+
+	.parallax__layer__6 {
+		--offset: 0vh;
+	}
+}
+
 
 @media (max-width: 768px) {
   .moon {
