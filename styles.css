@@ -56,6 +56,21 @@ body {
   transition: transform 250ms, opacity 400ms;
   z-index: 10;
 }
+.card1 {
+  background: rgba(134, 134, 134, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
+  width: 38rem;
+  min-height: 45vh;
+  height: auto;
+  margin: 15px;
+  border-radius: 15px;
+  transition: transform 250ms, opacity 400ms;
+  z-index: 10;
+}
 .card h2{
 	display: flex;
 	justify-content: center;
@@ -65,6 +80,24 @@ body {
   color: rgb(0, 0, 0);
 }
 .card p{
+	display: flex;
+	justify-content: center;
+	margin: 25px 25px;
+	opacity: 1;
+	font-weight: 600;
+	text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 1.3rem;
+}
+.card1 h2{
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+	font-size: 2.5rem;
+	opacity: 1;
+  color: rgb(0, 0, 0);
+}
+.card1 p{
 	display: flex;
 	justify-content: center;
 	margin: 25px 25px;
@@ -86,7 +119,18 @@ body {
 	transform: scale(1.1) translateY(-10px);
 	opacity: 1;
 }
-
+.card1:hover{
+  background: rgba(134, 134, 134, 1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(134, 134, 134, 0.3);
+	font-weight: 1000;
+	transition: 0.5s;
+	transform: scale(1.1) translateY(-10px);
+	opacity: 1;
+}
 .contact-us-btn {
   position: absolute;
   left: 50%;
@@ -351,14 +395,6 @@ body {
 
 
 @media (max-width: 768px) {
-  body {
-    height: 200vh;
-  }
-  .bottom-half {
-    height: 200vh;
-    background-color: #2d112b;
-    z-index: 3;
-  }
 
   .moon {
     width: 150px;
@@ -396,53 +432,28 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 150vh;
 }
 .card{
-  width: 80%;
+  width: 90%;
   height: auto;
-  margin: 10px;
 }
 .card p{
-  font-size: 1em;
+  font-size: 1.2em;
 }
 .card h2{
-  font-size: 1.4em;
+  font-size: 2em;
   text-align: center;
 }
-.card-img{
-  width: 4.5rem;
-  margin-top: 10%;
+.card1{
+  width: 90%;
+  height: auto;
+  margin-top: 20vh;
 }
+.card1 p{
+  font-size: 1.2em;
 }
-
-@media (max-width: 480px) {
-  .moon {
-    width: 100px;
-    height: 100px;
-  }
-
-  .planet-1 {
-    width: 60px;
-    height: 60px;
-  }
-
-  .planet-2 {
-    width: 40px;
-    height: 40px;
-  }
-  .parallax{
-    perspective: 150px;
-    bottom: -100px;
-  }
-  .stripe-red {
-    height: 9px;
-  }
-  
-  .stripe-blue {
-    height: 6px;
-  }
-  .moon .crater {
-    transform: scale(0.6);
-  }
+.card1 h2{
+  font-size: 2em;
+  text-align: center;
+}
 }
